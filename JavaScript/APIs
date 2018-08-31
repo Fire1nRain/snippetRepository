@@ -1,0 +1,112 @@
+module.exports = {
+    "dataSource": "tranquility",
+    "host": "esi.evetech.net",
+    "Assets": {
+        "characterAssets": {
+            method: "GET",
+            path: '/latest/characters/${characterID}/assets/',
+            postProcess: function (value) {
+                return value
+            }
+        }
+    },
+    "Character": {
+        "Location": {
+            method: "GET",
+            path: '/latest/characters/${characterID}/location/',
+            postProcess: function (value) {
+                return value
+            }
+        },
+        "Online": {
+            method: "GET",
+            path: '/latest/characters/${characterID}/online/',
+            postProcess: function (value) {
+                return value
+            }
+        },
+        "Ship": {
+            method: "GET",
+            path: '/latest/characters/${characterID}/ship/',
+            postProcess: function (value) {
+                return value
+            }
+        },
+        "Loyalty": {
+            method: "GET",
+            path: "/latest/characters/${characterID}/loyalty/points/",
+            postProcess: function (value) {
+                return value
+            }
+        }
+    },
+    "Universe": {
+        "System": {
+            method: "GET",
+            path: "/latest/universe/structures/${structure_id}/",
+            postProcess: function (value) {
+                return value
+            }
+        },
+        "Structure": {
+            method: "GET",
+            path: "/latest/universe/systems/${system_id}/",
+            postProcess: function (value) {
+                return value
+            }
+        },
+        "Station": {
+            method: "GET",
+            path: "/latest/universe/stations/${station_id}/",
+            postProcess: function (value) {
+                return value
+            }
+        },
+        "Constellation": {
+            method: "GET",
+            path: "/latest/universe/constellations/${constellation_id}/",
+            postProcess: function (value) {
+                return value
+            }
+        },
+        "Region": {
+            method: "GET",
+            path: "/latest/universe/regions/${region_id}/",
+            postProcess: function (value) {
+                return value
+            }
+        },
+        "IDs": {
+            method: "POST",
+            path: "/latest/universe/ids/",
+            postProcess: function (value) {
+                return value
+            }
+        },
+        "Names": {
+            method: "POST",
+            path: "/latest/universe/names/",
+            postProcess: function (value) {
+                return value
+            }
+        }
+    },
+    "UI": {
+        "Waypoint": {
+            method: "POST",
+            path: "/latest/ui/autopilot/waypoint/?add_to_beginning=${add_to_beginning}&clear_other_waypoints=${clear_other_waypoints}&destination_id=${destination_id}",
+            postProcess: function (value) {
+                return value
+            }
+        }
+    },
+    "Corporation": {
+        "Info": {
+            method: "GET",
+            path: "/latest/corporations/${corporation_id}/",
+            postProcess: function (value) {
+                return value
+            }
+        }
+    }
+};
